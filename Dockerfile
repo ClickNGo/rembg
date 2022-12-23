@@ -27,6 +27,6 @@ RUN wget https://github.com/danielgatis/rembg/releases/download/v0.0.0/u2net_hum
 RUN wget https://github.com/danielgatis/rembg/releases/download/v0.0.0/u2net_cloth_seg.onnx -O ~/.u2net/u2net_cloth_seg.onnx
 
 EXPOSE 5000
-CMD ["danielgatis/rembg", "s"]
-# ENTRYPOINT ["rembg"]
-# CMD ["--help"]
+# CMD ["danielgatis/rembg", "s"]
+ENTRYPOINT ["rembg"]
+CMD ["--help"]
