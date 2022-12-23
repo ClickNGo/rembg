@@ -27,5 +27,6 @@ RUN wget https://github.com/danielgatis/rembg/releases/download/v0.0.0/u2net_hum
 RUN wget https://github.com/danielgatis/rembg/releases/download/v0.0.0/u2net_cloth_seg.onnx -O ~/.u2net/u2net_cloth_seg.onnx
 
 EXPOSE 5000
-ENTRYPOINT ["rembg"]
-CMD ["--help"]
+CMD ["docker run -p 5000:5000 danielgatis/rembg s"]
+# ENTRYPOINT ["rembg"]
+# CMD ["--help"]
