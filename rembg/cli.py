@@ -407,6 +407,15 @@ def s(port: int, log_level: str, threads: int) -> None:
 
     @app.get(
         path="/",
+        tags=["Probe"],
+        summary="Checks if server is ready",
+        description="",
+    )
+    async def check_probe():
+        return "I'm alright"
+        
+    @app.get(
+        path="/rm",
         tags=["Background Removal"],
         summary="Remove from URL",
         description="Removes the background from an image obtained by retrieving an URL.",
@@ -423,7 +432,7 @@ def s(port: int, log_level: str, threads: int) -> None:
                 return await asyncify(im_without_bg)(file, commons)
 
     @app.post(
-        path="/",
+        path="/rm",
         tags=["Background Removal"],
         summary="Remove from Stream",
         description="Removes the background from an image sent within the request itself.",
